@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Экспедиция: артефакты команды</title>
+<style>
+:root{--navy:#173565;--sky:#67c4ed;--snow:#f7fbff;--rock:#34577c;--gold:#f4bd46;--ink:#1c2a42}*{box-sizing:border-box}body{margin:0;min-width:320px;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(#173565,#62c3ec);min-height:100vh;overflow-x:hidden}button{font:inherit}button:focus-visible{outline:3px solid white;outline-offset:4px}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.page{position:relative;min-height:100vh;overflow:hidden;padding:clamp(24px,4vw,52px) 18px 40px}.sun{position:absolute;right:9%;top:8%;width:88px;aspect-ratio:1;border-radius:50%;background:#ffe59b;box-shadow:0 0 45px #ffe59b88}.cloud{position:absolute;width:180px;height:36px;border-radius:999px;background:#ffffff99;animation:drift 18s linear infinite}.cloud:before,.cloud:after{content:"";position:absolute;bottom:0;border-radius:50%;background:inherit}.cloud:before{width:76px;height:76px;left:25px}.cloud:after{width:58px;height:58px;right:22px}.c1{top:20%;left:-50px}.c2{top:32%;right:-60px;animation-delay:-8s;transform:scale(.7)}@keyframes drift{from{translate:-25vw}to{translate:115vw}}.hero,.panel,.artifacts,.final{position:relative;z-index:2;max-width:930px;margin:auto}.hero{color:#fff;text-shadow:0 2px 10px #17356580}.eyebrow{color:#ffe4a2;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}.hero h1{margin:0;font-size:clamp(2rem,5vw,4rem);line-height:1}.lead{max-width:600px;line-height:1.5}.scene{position:relative;z-index:1;height:405px;max-width:1080px;margin:auto}.mountain{position:absolute;left:-10%;right:-10%;bottom:-1px;height:72%;clip-path:polygon(0 100%,22% 64%,37% 79%,56% 15%,70% 61%,87% 47%,100% 100%);background:linear-gradient(145deg,#527da5 0 48%,#294568 48%)}.snow{position:absolute;bottom:43%;left:35%;width:42%;height:23%;background:var(--snow);clip-path:polygon(0 100%,49% 0,100% 100%,70% 76%,54% 100%,38% 75%,21% 94%)}.team{position:absolute;z-index:2;left:50%;bottom:11%;transform:translateX(-50%);display:flex;align-items:flex-end;gap:12px}.person{position:relative;width:65px;height:145px;animation:breathe 2.6s ease-in-out infinite}.person:nth-child(2){animation-delay:-.6s}.person:nth-child(4){animation-delay:-1.3s}@keyframes breathe{50%{translate:0 -5px}}.head{position:absolute;left:50%;top:0;translate:-50%;width:24px;aspect-ratio:1;border-radius:50%;background:#f1b98d}.hair{position:absolute;left:25px;top:-2px;width:20px;height:14px;border-radius:50% 50% 20% 20%;background:#593829}.body{position:absolute;top:32px;left:16px;width:34px;height:68px;border-radius:18px 18px 8px 8px;background:#e86b55}.person:nth-child(2) .body{background:#65af96}.person:nth-child(4) .body{background:#8973c5}.leader{margin-right:55px;transition:transform 1.2s ease}.leader .body{background:#f3aa34}.backpack{position:absolute;top:42px;left:7px;width:14px;height:43px;border-radius:8px;background:#294568}.leg{position:absolute;bottom:0;width:13px;height:48px;border-radius:8px 8px 2px 2px;background:#24364e}.l1{left:22px;rotate:5deg}.l2{right:22px;rotate:-5deg}.walking{animation:walk 1.3s ease-in-out forwards}@keyframes walk{45%{transform:translateX(38px) translateY(-3px)}100%{transform:translateX(65px)}}.flag{position:absolute;z-index:3;left:calc(50% + 80px);bottom:11%;width:86px;height:170px;opacity:0;transform:translateY(-70px);transition:.7s}.flag.installed{opacity:1;transform:translateY(0)}.pole{position:absolute;left:10px;bottom:0;width:7px;height:170px;border-radius:7px;background:#633c2b}.cloth{position:absolute;top:8px;left:16px;width:70px;height:50px;background:#db4c5a;clip-path:polygon(0 0,100% 10%,84% 50%,100% 100%,0 88%);animation:wave 1.2s ease-in-out infinite alternate}@keyframes wave{to{transform:skewY(5deg) scaleX(.92)}}.panel{text-align:center;display:grid;justify-items:center;gap:13px;margin-top:-30px}.status{min-height:25px;color:white;font-weight:700;text-shadow:0 2px 8px #173565}.action,.restart{border:0;border-radius:14px;padding:14px 22px;cursor:pointer;font-weight:800}.action{color:#54320e;background:linear-gradient(#ffe38c,#f4bd46);box-shadow:0 7px #d88c22}.action:hover,.restart:hover{transform:translateY(-2px)}.hidden{display:none!important}.fade{animation:fade .45s ease both}@keyframes fade{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}.artifacts{margin-top:28px}.artifact-head{display:flex;justify-content:space-between;align-items:center;color:#fff;gap:12px}.artifact-head h2{margin:0}.counter{border:1px solid #ffffff66;border-radius:99px;padding:7px 10px;white-space:nowrap}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.artifact{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;min-height:130px;padding:18px;border:0;border-radius:20px;background:#fffffff2;color:var(--ink);text-align:left;cursor:pointer;box-shadow:0 12px 28px #10234a40;transition:.25s}.artifact:hover:not(.opened){transform:translateY(-4px)}.icon{display:grid;place-items:center;width:62px;height:62px;border-radius:17px;background:#315f8a;color:white;font-size:2rem}.artifact:nth-child(2) .icon{background:#8964a1}.artifact:nth-child(3) .icon{background:#c76e47}.artifact:nth-child(4) .icon{background:#358773}.title{display:block;margin-bottom:5px;font-size:.83rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}.text{display:block;line-height:1.4;color:#40506b}.text:empty{display:none}.opened{background:linear-gradient(135deg,#fffef5,#dcf5e8);cursor:default}.opened:after{content:"✓";position:absolute;color:#25906e;font-weight:900}.final{display:grid;justify-items:center;gap:12px;max-width:630px;margin-top:28px;padding:22px;border:1px solid #ffffff55;border-radius:20px;background:#173565c9;color:white;text-align:center;font-weight:800}.final p{margin:0}.restart{color:#fff;background:#377cce;box-shadow:0 5px #205a9c}canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}@media(max-width:600px){.scene{height:350px}.team{scale:.86}.flag{left:calc(50% + 45px)}.grid{grid-template-columns:1fr}.artifact-head{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* У открытых артефактов нет дополнительной зелёной галочки: состояние остаётся только по раскрытому тексту и стилю плашки. */
+.artifact.opened::after{display:none}
+
+/* Объёмные походники в стилистике референса */
+.scene{height:440px}.team{bottom:9%;gap:clamp(8px,1.5vw,18px)}.person{width:clamp(76px,10vw,112px);height:clamp(185px,25vw,272px);filter:drop-shadow(0 12px 8px #14284b52)}.head{z-index:4;top:4%;width:37%;aspect-ratio:.84;border-radius:48% 48% 45% 45%;background:radial-gradient(circle at 37% 36%,#fff9e8 0 5%,transparent 6%),radial-gradient(circle at 66% 36%,#fff9e8 0 5%,transparent 6%),radial-gradient(ellipse at 50% 79%,#9a4c42 0 7%,transparent 8%),linear-gradient(110deg,#e7a272,#ffd4aa 58%,#d8875d);box-shadow:inset -5px -5px 8px #b9654d55}.hair{z-index:5;left:31%;top:0;width:41%;height:18%;border-radius:75% 58% 23% 37%;background:linear-gradient(125deg,#2e1b17,#7d4a2b 60%,#2d1a17);transform:rotate(-6deg);box-shadow:inset 4px 3px 5px #bc744344}.person:after{content:"";position:absolute;z-index:1;left:18%;top:29%;width:64%;height:53%;border-radius:17px 17px 11px 11px;background:linear-gradient(105deg,#bd421b,#f37628 48%,#a93b1d);box-shadow:inset 7px 2px 7px #ffcb8c47,inset -7px -5px 8px #57211455}.person:nth-child(2):after{background:linear-gradient(105deg,#086a78,#149daf 50%,#075563)}.person:nth-child(3):after{background:linear-gradient(105deg,#b27205,#f0aa1e 50%,#914d05)}.person:nth-child(4):after{background:linear-gradient(105deg,#244f35,#5d8552 50%,#1c3f2d)}.leader{margin-right:clamp(40px,7vw,82px)}.leader:after{background:linear-gradient(105deg,#9c3216,#e75b20 48%,#8d2e16)}.backpack{z-index:0;top:27%;left:8%;width:29%;height:51%;border-radius:17px 10px 14px 15px;background:linear-gradient(90deg,#282b2b,#6a4231 55%,#292827);box-shadow:inset 4px 2px 3px #c2754755}.person:nth-child(2) .backpack{background:linear-gradient(90deg,#183a50,#2c728b,#17384b)}.person:nth-child(3) .backpack{background:linear-gradient(90deg,#68333e,#a8525f,#652c39)}.person:nth-child(4) .backpack{background:linear-gradient(90deg,#27382a,#48613b,#243426)}.backpack:after{content:"";position:absolute;top:-7%;left:3%;width:98%;height:25%;border-radius:50%;border:5px solid #815039;background:#54372c}.person:nth-child(2) .backpack:after{border-color:#39738e;background:#216078}.person:nth-child(3) .backpack:after{border-color:#bb6971;background:#803b49}.person:nth-child(4) .backpack:after{border-color:#657e53;background:#475a3e}.arm{position:absolute;z-index:3;top:34%;width:19%;height:38%;border-radius:20px;background:inherit}.arm.left{left:10%;transform:rotate(12deg)}.arm.right{right:10%;transform:rotate(-12deg)}.hand{position:absolute;z-index:4;top:65%;width:14%;height:14%;border-radius:50%;background:#f1b98d;box-shadow:inset -3px -3px 4px #b9654d55}.hand.left{left:7%}.hand.right{right:7%}.leg{z-index:0;width:24%;height:34%;background:linear-gradient(90deg,#182733,#3c4b51)}.leg:after{content:"";position:absolute;bottom:-4%;width:130%;height:15%;border-radius:60% 25% 20% 35%;background:#573820}.l1:after{left:-15%}.l2:after{right:-15%}.beanie{position:absolute;z-index:6;left:29%;top:-1%;width:42%;height:17%;border-radius:60% 60% 34% 34%;background:linear-gradient(#1d4162,#356c97);box-shadow:inset 0 -5px #183a58}.flag{left:calc(50% + 100px);bottom:9%}@media(max-width:600px){.scene{height:365px}.team{scale:.7}.flag{left:calc(50% + 47px)}}
+
+/* Медальоны артефактов в стилистике референса */
+.icon.medallion{position:relative;isolation:isolate;display:grid;place-items:center;width:68px;height:76px;overflow:visible;border:3px solid #5d381a;border-radius:48% 48% 43% 43% / 43% 43% 55% 55%;background:linear-gradient(135deg,#70441e 0 7%,#efc86c 8% 13%,#8b5425 14% 18%,#ecd597 19% 23%,#315b72 24% 100%);box-shadow:0 0 0 2px #f9e1a0,inset 0 0 0 3px #173a52,inset 0 0 13px #0e2b3d,0 5px 8px #15294a55;color:transparent}.icon.medallion::before{content:"";position:absolute;z-index:-1;inset:7px;border:2px solid #d4a54e;border-radius:50%;background:linear-gradient(160deg,#75adc0 0 38%,#426f82 39% 100%);box-shadow:inset 0 0 0 2px #20445a}.icon.medallion::after{content:"";position:absolute;width:25px;height:25px;clip-path:polygon(50% 0,67% 25%,100% 32%,76% 57%,77% 94%,50% 78%,23% 94%,24% 57%,0 32%,33% 25%);background:linear-gradient(135deg,#fff0a9 0 13%,#b46a1b 14% 37%,#f6c14d 38% 57%,#8f4c15 58% 100%);filter:drop-shadow(0 1px 1px #3c250f);box-shadow:0 0 0 2px #6a3915}.icon.medallion .mountains{position:absolute;bottom:14px;left:13px;width:36px;height:22px;clip-path:polygon(0 100%,28% 44%,43% 68%,65% 10%,100% 100%);background:#e9e4be;opacity:.96;filter:drop-shadow(0 -1px #305c70)}.artifact:nth-child(2) .icon.medallion{filter:hue-rotate(14deg)}.artifact:nth-child(3) .icon.medallion{filter:hue-rotate(-12deg)}.artifact:nth-child(4) .icon.medallion{filter:saturate(.85) hue-rotate(30deg)}
+
+/* Яркая дневная палитра: объёмный 3D-мультфильм */
+:root{--navy:#16456f;--sky:#77d8fb;--snow:#fffdf4;--rock:#3e7890;--gold:#ffd04f;--ink:#183657}
+body{background:linear-gradient(180deg,#54c9f3 0%,#8ee2f7 49%,#c5f1d0 100%)}
+.page{background:linear-gradient(180deg,rgba(255,255,255,.12),transparent 45%)}
+.page:before{content:"";position:absolute;z-index:0;inset:auto -10% 0;height:23%;background:linear-gradient(180deg,#a6df77 0%,#62ad55 48%,#438546 100%);clip-path:polygon(0 48%,12% 27%,26% 47%,42% 21%,58% 44%,75% 17%,88% 43%,100% 26%,100% 100%,0 100%);filter:drop-shadow(0 -7px 0 rgba(255,255,255,.24))}
+.sun{top:7%;right:10%;width:clamp(86px,10vw,132px);background:radial-gradient(circle at 35% 32%,#fffce1 0 11%,#ffe477 42%,#ffbf39 100%);box-shadow:0 0 0 14px rgba(255,239,142,.26),0 0 65px rgba(255,218,80,.75)}
+.cloud{background:rgba(255,255,255,.92);filter:drop-shadow(0 8px 7px rgba(44,121,154,.12));opacity:1}
+.hero{color:#16456f;text-shadow:0 2px 0 rgba(255,255,255,.55)}
+.eyebrow{color:#a85316;text-shadow:none}.lead{font-weight:600}.scene{filter:drop-shadow(0 9px 9px rgba(32,116,120,.13))}
+.mountain{background:linear-gradient(140deg,#8ac4d6 0 35%,#5b9caf 35% 51%,#397589 51% 100%);filter:drop-shadow(0 9px 0 rgba(31,102,92,.13))}
+.snow{background:linear-gradient(135deg,#ffffff 0 45%,#d9f3fb 100%);box-shadow:0 5px 8px rgba(46,125,148,.16)}
+.status{color:#16456f;text-shadow:0 1px 0 rgba(255,255,255,.75)}
+.action{background:linear-gradient(180deg,#fff49a 0%,#ffd24f 57%,#f5aa2a 100%);box-shadow:0 7px #d77b1a,0 11px 20px rgba(97,86,18,.22)}
+.artifact-head{color:#16456f;text-shadow:0 1px 0 rgba(255,255,255,.65)}.counter{background:rgba(255,255,255,.42);border-color:rgba(22,69,111,.22)}
+.artifact{border:2px solid rgba(255,255,255,.86);box-shadow:0 13px 26px rgba(28,112,129,.2)}
+.final{background:linear-gradient(135deg,rgba(29,116,162,.93),rgba(46,163,137,.93));border-color:rgba(255,255,255,.76);box-shadow:0 14px 28px rgba(30,92,124,.25)}
+
+/* Флаг появляется прямо на пике: без персонажей */
+.scene{height:440px}.flag{left:calc(50% + 5%);bottom:58%;height:140px;opacity:0;transform:scaleY(0);transform-origin:center bottom;transition:opacity .18s ease,transform .85s cubic-bezier(.18,.82,.24,1.15);filter:drop-shadow(0 9px 7px rgba(27,77,96,.24))}.flag.installed{opacity:1;transform:scaleY(1)}.pole{height:140px}.cloth{filter:drop-shadow(2px 3px 0 rgba(125,47,37,.18))}@media(max-width:600px){.scene{height:365px}.flag{left:calc(50% + 4%);bottom:57%;transform-origin:center bottom}}
+/* Анимированные солнечные лучи */
+.sun{z-index:0;isolation:isolate;animation:sunPulse 3.6s ease-in-out infinite}
+.sun::before{content:"";position:absolute;z-index:-1;inset:50%;width:clamp(180px,23vw,310px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(255,208,70,.55) 0deg 7deg,transparent 7deg 22deg);-webkit-mask:radial-gradient(circle,transparent 0 29%,#000 31% 100%);mask:radial-gradient(circle,transparent 0 29%,#000 31% 100%);animation:sunRays 18s linear infinite}
+.sun::after{content:"";position:absolute;z-index:-1;inset:50%;width:150%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,rgba(255,238,131,.48),transparent 68%);animation:sunGlow 3.6s ease-in-out infinite}
+@keyframes sunRays{to{rotate:360deg}}
+@keyframes sunPulse{50%{scale:1.045}}
+@keyframes sunGlow{50%{opacity:.62;scale:1.12}}
+
+/* Финальный визуальный слой: яркая объёмная 3D-мульт-сцена */
+body{background:linear-gradient(180deg,#55cdf4 0%,#a4ebfb 58%,#d9f3bf 100%)}
+.page{background:radial-gradient(ellipse at 16% 14%,rgba(255,255,255,.72) 0 4%,transparent 16%),linear-gradient(180deg,rgba(255,255,255,.16),transparent 42%)}
+.page:after{content:"";position:absolute;z-index:0;inset:auto -5% 0;height:27%;background:radial-gradient(ellipse at 11% 93%,#428f48 0 6%,transparent 6.4%),radial-gradient(ellipse at 26% 98%,#4a994f 0 9%,transparent 9.4%),radial-gradient(ellipse at 54% 96%,#3e8e48 0 11%,transparent 11.4%),radial-gradient(ellipse at 84% 95%,#4b9950 0 10%,transparent 10.4%),linear-gradient(180deg,#92d66e 0%,#4c9a4f 49%,#2f7542 100%);clip-path:polygon(0 33%,9% 22%,21% 42%,34% 20%,51% 39%,67% 16%,84% 40%,100% 24%,100% 100%,0 100%);filter:drop-shadow(0 -10px 0 rgba(255,255,255,.34))}
+.hero{position:relative;z-index:3}.hero h1{letter-spacing:-.045em;color:#17517d;text-shadow:0 3px 0 rgba(255,255,255,.78),0 8px 16px rgba(36,122,159,.12)}.lead{color:#255b7a;text-shadow:0 1px 0 white}.eyebrow{color:#b3621a}
+.sun{width:clamp(84.6px,9.9vw,131.4px);box-shadow:0 0 0 13px rgba(255,243,154,.25),0 0 46px 14px rgba(255,205,64,.38),inset -12px -14px 18px rgba(244,144,18,.22),inset 10px 9px 12px rgba(255,255,255,.68)}
+/* Солнце и его анимированные лучи уменьшены на 10%. */
+.sun:before{width:clamp(162px,20.7vw,279px)}
+.cloud{filter:drop-shadow(0 12px 10px rgba(53,132,163,.18));background:linear-gradient(180deg,#fff,#eaf8ff)}
+.scene{height:465px;perspective:900px;filter:none}.scene:before{content:"";position:absolute;z-index:-3;inset:14% -5% 6%;background:radial-gradient(ellipse at 10% 100%,#84c56c 0 14%,transparent 14.5%),radial-gradient(ellipse at 38% 102%,#a2dc7e 0 17%,transparent 17.4%),radial-gradient(ellipse at 76% 102%,#76ba66 0 17%,transparent 17.4%);opacity:.9}
+.mountain{z-index:1;left:4%;right:4%;bottom:2%;height:75%;clip-path:polygon(0 100%,12% 71%,22% 78%,35% 47%,45% 62%,57% 8%,66% 48%,75% 67%,88% 41%,100% 100%);background:linear-gradient(115deg,#b7ecf5 0 20%,#80c4d2 20% 36%,#4d97a9 36% 53%,#2d7389 53% 100%);filter:drop-shadow(0 18px 12px rgba(34,109,112,.2));transform:rotateX(2deg)}
+.mountain:before{content:"";position:absolute;inset:0;background:linear-gradient(132deg,transparent 0 29%,rgba(255,255,255,.62) 29.3% 36%,transparent 36.4% 49%,rgba(15,81,106,.22) 49.4% 68%,transparent 68.4%),repeating-linear-gradient(155deg,rgba(255,255,255,.13) 0 3px,transparent 3px 23px);mix-blend-mode:soft-light}
+.mountain:after{content:"";position:absolute;left:22%;bottom:8%;width:55%;height:24%;background:radial-gradient(ellipse at center,#175e75 0 35%,transparent 67%);opacity:.22;filter:blur(7px)}
+.snow{z-index:2;bottom:44%;left:42%;width:30%;height:27%;clip-path:polygon(0 100%,50% 0,100% 100%,72% 75%,57% 91%,42% 72%,22% 94%);background:linear-gradient(135deg,#ffffff 0 32%,#d9f7ff 52%,#a7dce9 100%);filter:drop-shadow(0 7px 4px rgba(24,102,130,.21));box-shadow:none}
+.snow:before{content:"";position:absolute;inset:28% 15% 0;background:linear-gradient(125deg,transparent 0 28%,rgba(93,177,201,.36) 29% 38%,transparent 39% 55%,rgba(255,255,255,.5) 56% 67%,transparent 68%)}
+.flag{z-index:5;filter:drop-shadow(6px 12px 8px rgba(32,91,96,.25))}.pole{width:9px;border-radius:9px;background:linear-gradient(90deg,#633417,#ba7034 44%,#f1b967 55%,#7b3e1b 100%);box-shadow:inset 1px 0 rgba(255,255,255,.5)}.cloth{border-radius:2px 10px 10px 2px;background:linear-gradient(145deg,#ff8764 0%,#e64145 45%,#b91f3f 100%);box-shadow:inset 7px 5px 9px rgba(255,255,255,.32),inset -8px -7px 9px rgba(102,10,36,.26)}
+.panel{z-index:6}.status{color:#1b5879;font-size:1.02rem;text-shadow:0 2px 0 rgba(255,255,255,.78)}.action,.restart{border:2px solid rgba(255,255,255,.84);background:linear-gradient(180deg,#fff9a8 0%,#ffd54e 47%,#ee9d22 100%);box-shadow:inset 0 3px 2px rgba(255,255,255,.7),inset 0 -5px 5px rgba(191,99,16,.23),0 7px 0 #bf6517,0 12px 20px rgba(67,100,38,.22);text-shadow:0 1px rgba(255,255,255,.5)}
+.artifact-head{color:#19577a;text-shadow:0 2px 0 white}.counter{background:rgba(255,255,255,.68);box-shadow:inset 0 2px 2px white,0 5px 10px rgba(41,122,147,.12)}.artifact{position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.95);background:linear-gradient(130deg,#fffef7 0%,#fff8dc 45%,#dff5f4 100%);box-shadow:inset 0 3px 3px rgba(255,255,255,.9),inset 0 -7px 14px rgba(52,139,148,.12),0 14px 0 rgba(41,119,129,.16),0 20px 28px rgba(34,112,135,.21)}.artifact:before{content:"";position:absolute;inset:0;background:linear-gradient(118deg,rgba(255,255,255,.7),transparent 22% 65%,rgba(100,199,211,.18));pointer-events:none}.artifact:hover:not(.opened){transform:translateY(-7px) scale(1.015)}.opened{background:linear-gradient(135deg,#fffdf1,#d4f5d9);box-shadow:inset 0 3px 3px white,inset 0 -7px 13px rgba(35,152,103,.14),0 12px 0 rgba(32,132,91,.2),0 20px 28px rgba(34,112,82,.21)}.icon.medallion{transform:perspective(150px) rotateY(-8deg) rotateX(4deg);box-shadow:0 0 0 2px #fff0b2,0 0 0 5px #87511f,inset 0 0 0 3px #173a52,inset 0 0 13px #0e2b3d,5px 8px 8px rgba(26,64,70,.28)}.title{color:#164c70}.text{color:#345c6c}.final{background:linear-gradient(135deg,#2f90b8,#47b779);box-shadow:inset 0 2px rgba(255,255,255,.5),0 16px 30px rgba(30,92,124,.28)}
+@media(max-width:600px){.scene{height:390px}.mountain{left:-12%;right:-12%;height:70%}.snow{left:36%;width:40%;height:25%}}
+
+/* Статус расположен между вершиной и блоком артефактов */
+.panel{margin-top:34px}
+.artifacts{margin-top:30px}
+
+/* Карточка-подсказка от гида */
+.hero{display:flex;align-items:center;gap:clamp(16px,3vw,32px);max-width:900px;margin:0 auto 10px;padding:clamp(14px,2.4vw,25px);border:2px solid rgba(255,255,255,.84);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.93),rgba(237,250,255,.84));box-shadow:inset 0 2px 2px rgba(255,255,255,.95),0 15px 28px rgba(39,125,156,.18);text-shadow:none}
+.hero-copy{min-width:0}.hero .eyebrow{display:none}.hero h1{margin:0;color:#19577d;font-size:clamp(1.45rem,3.1vw,2.34rem);line-height:1.18;letter-spacing:-.035em;text-shadow:none}.hero .lead{max-width:620px;margin:clamp(11px,1.8vw,17px) 0 0;color:#276383;font-size:clamp(1rem,2.1vw,1.28rem);font-weight:750;line-height:1.43;text-shadow:none}
+.guide-avatar{position:relative;flex:0 0 clamp(112px,15vw,165px);width:clamp(112px,15vw,165px);aspect-ratio:1;overflow:hidden;border:2px solid #94d55f;border-radius:50%;background:radial-gradient(circle at 46% 28%,#f9fbde 0 17%,#e3f5e4 18% 54%,#b1dfcc 55% 100%);box-shadow:inset 0 3px 5px rgba(255,255,255,.95),0 8px 13px rgba(38,112,109,.18)}
+.guide-avatar .guide-pack{position:absolute;z-index:1;bottom:-11%;left:11%;width:63%;height:61%;border-radius:42% 42% 24% 24%;background:linear-gradient(90deg,#5b3021,#ae6330 45%,#633321);box-shadow:inset 8px 5px 8px rgba(242,163,91,.4)}
+.guide-avatar .guide-pack:before{content:"";position:absolute;top:5%;left:-22%;width:53%;height:50%;border:7px solid #9c5729;border-right:0;border-radius:50%;transform:rotate(-23deg)}
+.guide-avatar .guide-body{position:absolute;z-index:2;bottom:-14%;left:23%;width:62%;height:66%;border-radius:39% 39% 16% 16%;background:linear-gradient(105deg,#245b68,#3d8a91 48%,#164a5a);box-shadow:inset 8px 6px 9px rgba(133,219,210,.33),inset -9px -5px 10px rgba(5,44,58,.24)}
+.guide-avatar .guide-head{position:absolute;z-index:4;top:25%;left:50%;width:39%;aspect-ratio:.86;border-radius:48% 48% 45% 45%;transform:translateX(-50%);background:radial-gradient(circle at 35% 39%,#fff 0 5%,transparent 6%),radial-gradient(circle at 66% 39%,#fff 0 5%,transparent 6%),radial-gradient(ellipse at 50% 76%,#843d32 0 7%,transparent 8%),linear-gradient(110deg,#a9532e,#e99360 55%,#71341f);box-shadow:inset -4px -5px 7px rgba(92,35,24,.28)}
+.guide-avatar .guide-hair{position:absolute;z-index:5;top:18%;left:29%;width:43%;height:25%;border-radius:52% 52% 38% 38%;background:linear-gradient(135deg,#1b2830,#3c4e53 70%,#142128);transform:rotate(-8deg);box-shadow:inset 4px 3px 4px rgba(128,155,149,.3)}
+.guide-avatar .guide-hat{position:absolute;z-index:6;top:11%;left:20%;width:61%;height:27%;border-radius:54% 54% 39% 39%;background:linear-gradient(120deg,#27343b,#54626a 48%,#1a272e);box-shadow:inset 4px 4px 5px rgba(174,202,191,.34),0 4px 0 rgba(25,41,45,.28)}
+.guide-avatar .guide-hat:after{content:"";position:absolute;right:-20%;bottom:-8%;width:66%;height:29%;border-radius:0 80% 80% 0;background:linear-gradient(#2b3b43,#18262e);transform:rotate(11deg)}
+.guide-avatar .guide-hand{position:absolute;z-index:7;right:7%;bottom:17%;width:23%;aspect-ratio:1;border-radius:46% 46% 40% 40%;background:linear-gradient(120deg,#e99a64,#9e4d2b);transform:rotate(-23deg);box-shadow:inset -3px -3px 4px rgba(91,35,20,.25)}
+.guide-avatar .guide-hand:after{content:"";position:absolute;top:-42%;left:18%;width:48%;height:76%;border-radius:70% 70% 42% 42%;background:inherit;transform:rotate(-25deg)}
+@media(max-width:600px){.hero{align-items:flex-start;border-radius:21px}.hero h1{font-size:1.33rem}.hero .lead{font-size:.96rem}.guide-avatar{flex-basis:88px;width:88px}.scene{margin-top:12px}}
+
+/* Реплика гида без фоновой карточки — выравнивание от левого края страницы */
+.hero{max-width:none;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;text-align:left}
+.hero-copy{text-align:left}
+.hero .lead{max-width:620px}
+
+/* Детализированный оригинальный 3D-гид по мотивам визуальных признаков референса */
+.guide-avatar.guide-3d{background:radial-gradient(circle at 46% 24%,#fbffe8 0 13%,#d9f3d9 32%,#a6d6bf 71%,#75a790 100%)}
+.guide-3d .guide-pack{left:10%;bottom:-12%;width:69%;height:61%;background:linear-gradient(90deg,#743819 0%,#c67332 42%,#7a3a1c 100%);border-radius:42% 42% 25% 25%;box-shadow:inset 8px 6px 10px #f2a75d70,inset -8px -4px 9px #44200f66}
+.guide-3d .guide-roll{position:absolute;z-index:2;left:8%;bottom:34%;width:39%;height:29%;border-radius:48%;background:repeating-radial-gradient(ellipse at 50% 50%,#7b3718 0 3px,#b95e2a 4px 7px,#e18a43 8px 10px);box-shadow:inset 0 0 0 5px #8e441f,3px 3px 5px #4e260f66}
+.guide-3d .guide-body{left:22%;bottom:-17%;width:67%;height:67%;background:linear-gradient(105deg,#174c50,#397c7b 44%,#123d44);border-radius:39% 39% 15% 15%;box-shadow:inset 8px 7px 10px #78c2b266,inset -10px -6px 11px #092d3466}
+.guide-3d .guide-shirt{position:absolute;z-index:3;bottom:7%;left:43%;width:20%;height:35%;border-radius:0 0 45% 45%;background:linear-gradient(90deg,#17434a,#367071,#163d44);clip-path:polygon(0 0,100% 0,77% 100%,50% 83%,23% 100%)}
+.guide-3d .guide-head{z-index:5;top:25%;width:42%;background:radial-gradient(circle at 33% 37%,#fff 0 5%,#674126 6% 9%,transparent 10%),radial-gradient(circle at 68% 37%,#fff 0 5%,#674126 6% 9%,transparent 10%),linear-gradient(110deg,#b76032,#eea36a 54%,#9c4a2b);box-shadow:inset 5px 4px 7px #ffc69a66,inset -5px -7px 8px #77351f55}
+.guide-3d .guide-ear{position:absolute;z-index:4;top:39%;width:13%;height:17%;border-radius:50%;background:linear-gradient(90deg,#b96034,#e59661);box-shadow:inset 2px 1px 3px #71311e77}.guide-3d .guide-ear.left{left:26%}.guide-3d .guide-ear.right{right:26%;transform:scaleX(-1)}
+.guide-3d .guide-beard{position:absolute;z-index:6;top:46%;left:32%;width:37%;height:29%;border-radius:24% 24% 48% 48%;background:linear-gradient(110deg,#8c3c12,#d46a20 48%,#933c13);clip-path:polygon(0 5%,22% 22%,50% 15%,78% 22%,100% 5%,89% 79%,68% 100%,32% 100%,11% 79%);box-shadow:inset 3px 3px 5px #f8a04e66}.guide-3d .guide-beard:after{content:"";position:absolute;top:19%;left:23%;width:54%;height:19%;border-radius:50%;border-bottom:3px solid #fff1ce}
+.guide-3d .guide-nose{position:absolute;z-index:7;top:48%;left:47%;width:11%;height:13%;border-radius:50% 50% 45% 45%;background:linear-gradient(90deg,#bd6537,#f4b079,#a84d2b);box-shadow:1px 2px 2px #80371d44}
+.guide-3d .guide-eyes{position:absolute;z-index:7;top:36%;left:39%;width:6%;height:8%;border-radius:50%;background:#2d251d;box-shadow:18px 1px 0 #2d251d}.guide-3d .guide-brows{position:absolute;z-index:7;top:30%;left:35%;width:15%;height:6%;border-radius:60% 60% 30% 30%;background:#70401d;transform:rotate(-8deg);box-shadow:23px 3px 0 #70401d}
+.guide-3d .guide-hat{z-index:9;top:8%;left:18%;width:66%;height:30%;border-radius:52% 52% 38% 38%;background:linear-gradient(130deg,#17232e,#4c6074 50%,#17232e);box-shadow:inset 7px 5px 7px #9aa9b766,inset -6px -5px 8px #08131b77,0 4px 3px #12212a66}.guide-3d .guide-hat:after{right:-22%;bottom:-20%;width:75%;height:34%;background:linear-gradient(180deg,#2d4050,#17232d);transform:rotate(11deg);box-shadow:0 3px 3px #0c162066}
+.guide-3d .guide-palm{position:absolute;z-index:10;right:7%;bottom:15%;width:25%;height:28%;border-radius:47% 48% 42% 42%;background:linear-gradient(115deg,#b85e34,#f3ac78 57%,#9e4828);transform:rotate(-20deg);box-shadow:inset -4px -4px 5px #78361e55}.guide-3d .guide-thumb{position:absolute;z-index:11;right:16%;bottom:35%;width:12%;height:30%;border-radius:70% 70% 42% 42%;background:linear-gradient(100deg,#b85e34,#f3ac78 60%,#9e4828);transform:rotate(-20deg);box-shadow:inset -3px -2px 4px #78361e55}
+
+/* Текст вступления без изображения гида */
+.hero{display:block;width:100%;padding-left:clamp(4px,2vw,28px)}
+.hero-copy{max-width:820px;text-align:left}
+.hero .eyebrow{display:none}
+.hero h1{font-size:clamp(2.1rem,4.3vw,3.55rem);line-height:1.14;text-align:left}
+.hero .lead{max-width:760px;margin-top:clamp(16px,2vw,24px);font-size:clamp(1.15rem,2.45vw,1.55rem);line-height:1.42;text-align:left}
+@media(max-width:600px){.hero{padding-left:0}.hero h1{font-size:clamp(1.85rem,8vw,2.4rem)}.hero .lead{font-size:1.1rem}}
+
+/* Заголовок всегда состоит из двух заданных строк */
+.hero h1{font-size:clamp(1.85rem,3.5vw,2.95rem);letter-spacing:-.05em}
+.hero h1 .title-line{display:block;white-space:nowrap}
+@media(max-width:600px){.hero h1{font-size:clamp(1.75rem,7.3vw,2.35rem);letter-spacing:-.045em}.hero h1 .title-line{white-space:normal}}
+
+/* Подножие горы: склоны уходят в зелёную долину, а не висят в воздухе */
+.scene{overflow:hidden}
+.mountain{bottom:-2%;height:78%}
+.scene:after{content:"";position:absolute;z-index:3;right:-6%;bottom:-1px;left:-6%;height:19%;background:linear-gradient(180deg,#91d86f 0%,#4b9a4f 55%,#347940 100%);clip-path:polygon(0 42%,10% 19%,23% 41%,36% 26%,50% 45%,64% 16%,78% 39%,90% 23%,100% 42%,100% 100%,0 100%);filter:drop-shadow(0 -5px 0 rgba(255,255,255,.2));pointer-events:none}
+.snow{bottom:45%}
+.flag{bottom:61%;z-index:5}
+@media(max-width:600px){.mountain{bottom:-2%;height:78%}.scene:after{height:21%}.flag{bottom:60%}}
+
+/* Небо остаётся фоном страницы; зелень — только у подножия горы */
+.page:before,.page:after{display:none}
+.scene{overflow:hidden}
+.scene:before{display:none}
+.scene:after{z-index:3;right:-6%;bottom:-1px;left:-6%;width:auto;height:19%;transform:none;background:linear-gradient(180deg,#91d86f 0%,#4b9a4f 55%,#347940 100%);clip-path:polygon(0 42%,10% 19%,23% 41%,36% 26%,50% 45%,64% 16%,78% 39%,90% 23%,100% 42%,100% 100%,0 100%);filter:drop-shadow(0 -5px 0 rgba(255,255,255,.2));pointer-events:none}
+.mountain{z-index:1}
+.snow{z-index:2}
+.flag{z-index:5}
+.panel,.artifacts,.final{z-index:6}
+@media(max-width:600px){.scene:after{height:21%}}
+
+/* Зелёная линия подножия тянется от края до края экрана */
+.scene{overflow:visible}
+.scene:after{right:auto;left:50%;width:100vw;transform:translateX(-50%)}
+
+/* Гора находится перед зелёным подножием, а не перекрывается им */
+.mountain{z-index:4}
+.snow{z-index:5}
+.flag{z-index:6}
+
+/* Нижние края горы и зелёного подножия совпадают */
+.mountain{bottom:0}
+.scene:after{bottom:0}
+@media(max-width:600px){.mountain{bottom:0}.scene:after{bottom:0}}
+
+/* Поднимаем вершину, подножие и панель действий на 10% высоты сцены */
+.mountain{bottom:10%;transform:translateY(0) rotateX(2deg)}
+.scene:after{bottom:10%}
+.snow{bottom:55%}
+.flag{bottom:71%}
+.panel{margin-top:-12px}
+@media(max-width:600px){
+  .mountain{bottom:10%}
+  .scene:after{bottom:10%}
+  .snow{bottom:55%}
+  .flag{bottom:70%}
+  .panel{margin-top:-5px}
+}
+
+/* Поднимаем сцену и действия ещё на 10% */
+.mountain{bottom:20%}
+.scene:after{bottom:20%}
+.snow{bottom:65%}
+.flag{bottom:81%}
+.panel{margin-top:-58px}
+@media(max-width:600px){
+  .mountain{bottom:20%}
+  .scene:after{bottom:20%}
+  .snow{bottom:65%}
+  .flag{bottom:80%}
+  .panel{margin-top:-44px}
+}
+
+/* Место под изображение гида: текст воспринимается как его реплика */
+.hero{display:flex;align-items:center;gap:clamp(16px,2.8vw,32px);padding-left:clamp(4px,2vw,28px)}
+.guide-slot{position:relative;display:grid;flex:0 0 clamp(112px,14vw,170px);width:clamp(112px,14vw,170px);aspect-ratio:1;place-items:center;overflow:hidden;border:2px dashed rgba(47,132,68,.86);border-radius:50%;background:radial-gradient(circle at 35% 25%,rgba(255,255,255,.95),rgba(236,255,236,.65) 48%,rgba(178,229,192,.5) 100%);box-shadow:inset 0 3px 4px rgba(255,255,255,.9),0 9px 16px rgba(35,120,121,.16);cursor:pointer}
+.guide-slot::before{content:"Выбрать\A картинку гида";white-space:pre;position:absolute;z-index:1;bottom:14%;color:#286475;font-size:clamp(.62rem,1.15vw,.78rem);font-weight:800;line-height:1.25;text-align:center;text-shadow:0 1px white}
+.guide-slot.has-image{border:0;background:transparent;box-shadow:inset 0 0 0 3px #4a9650}/* Внешний контур рисуется поверх изображения по самому краю круга и не увеличивает его размер. */
+.guide-slot.has-image::before{display:none}
+.guide-slot img{display:block;width:100%;height:100%;object-fit:contain} 
+.guide-slot input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none} 
+.guide-slot:focus-within{outline:3px solid white;outline-offset:4px}
+.hero-copy{position:relative;padding:0;background:transparent;box-shadow:none}
+.hero-copy::before{display:none}
+.hero-copy > *{position:relative;z-index:1}
+@media(max-width:600px){.hero{align-items:flex-start;gap:12px;padding-left:0}.guide-slot{flex-basis:80px;width:80px}.hero-copy{padding:10px 12px;border-radius:0 15px 15px 15px}.hero-copy::before{left:-8px;width:17px;height:17px}.guide-slot::after{font-size:.55rem}.hero h1{font-size:clamp(1.6rem,6.6vw,2.2rem)}.hero .lead{font-size:1rem}}
+
+/* Поднимаем вступительный блок выше, чтобы он не пересекался с флагом */
+.hero{transform:translateY(-18px)}
+@media(max-width:600px){.hero{transform:translateY(-10px)}}
+
+/* Опускаем сцену и панель действий на 5% */
+.mountain{bottom:15%}
+.scene:after{bottom:15%}
+.flag{bottom:76%}
+.panel{margin-top:-35px}
+
+/* Снежная шапка совпадает с вершиной центрального пика горы.
+   У горы пик расположен на 57% ширины; вершина шапки — в её центре. */
+.snow{
+  left:42%;
+  bottom:61%;
+  width:30%;
+  height:27%;
+}
+@media(max-width:600px){
+  .mountain{bottom:15%}
+  .scene:after{bottom:15%}
+  .snow{left:37%;bottom:61%;width:40%;height:25%}
+  .flag{bottom:75%}
+  .panel{margin-top:-25px}
+}
+
+/* Более просторные карточки: текст не прилегает к медальону */
+.artifact{
+  grid-template-columns:78px minmax(0,1fr);
+  gap:24px;
+  min-height:150px;
+  padding:22px 24px;
+}
+.artifact .icon.medallion{
+  width:74px;
+  height:82px;
+}
+.artifact .text{
+  line-height:1.5;
+}
+@media(max-width:600px){
+  .artifact{
+    grid-template-columns:74px minmax(0,1fr);
+    gap:20px;
+    min-height:142px;
+    padding:20px;
+  }
+  .artifact .icon.medallion{
+    width:68px;
+    height:76px;
+  }
+}
+
+/* Плашки расширены по горизонтали; высота остаётся компактной */
+.artifacts{
+  max-width:1160px;
+}
+.artifact{
+  grid-template-columns:74px minmax(0,1fr);
+  gap:24px;
+  min-height:130px;
+  padding:18px 24px;
+}
+.artifact .icon.medallion{
+  width:68px;
+  height:76px;
+}
+@media(max-width:600px){
+  .artifacts{max-width:930px}
+  .artifact{
+    grid-template-columns:68px minmax(0,1fr);
+    gap:18px;
+    min-height:130px;
+    padding:18px;
+  }
+}
+
+/* Место для собственной картинки горы: занимает тот же передний план,
+   что и прежняя иллюстрация горы. */
+.mountain,.snow{display:none}
+.mountain-slot{
+  position:absolute;
+  z-index:7;
+  bottom:15%;
+  left:50%;
+  display:grid;
+  width:min(108vw,1080px);
+  height:78%;
+  place-items:center;
+  overflow:visible;
+  transform:translateX(-50%);
+  border:2px dashed rgba(33,111,102,.72);
+  border-radius:28px 28px 0 0;
+  background:rgba(255,255,255,.14);
+  box-shadow:inset 0 3px 10px rgba(255,255,255,.34);
+  cursor:pointer;
+}
+.mountain-placeholder{
+  position:absolute;
+  z-index:1;
+  padding:10px 15px;
+  color:#1b5879;
+  font-size:clamp(.78rem,1.5vw,1rem);
+  font-weight:800;
+  text-shadow:0 1px 0 white;
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+}
+.mountain-slot.has-image{border-color:transparent;background:transparent;box-shadow:none}
+.mountain-slot.has-image .mountain-placeholder{display:none}
+.mountain-slot img{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  pointer-events:none;
+}
+.mountain-slot input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.mountain-slot:focus-within{outline:3px solid white;outline-offset:4px}
+.flag{z-index:8}
+@media(max-width:600px){
+  .mountain-slot{bottom:15%;width:110vw;height:78%;border-radius:18px 18px 0 0}
+}
+
+/* Пользовательские изображения горы увеличены ещё на 10%, оставаясь на переднем плане */
+.mountain-slot{
+  width:min(142.56vw,1426px);
+  height:102.96%;
+  /* Сдвиг вправо освобождает место для вступительного текста. */
+  transform:translateX(calc(-50% + 10vw));
+}
+@media(max-width:600px){
+  .mountain-slot{
+    width:145.2vw;
+    height:102.96%;
+    transform:translateX(calc(-50% + 5vw));
+  }
+}
+
+/* Вторая картинка: она заменяет исходную гору после установки флага */
+.mountain-after-slot{
+  position:absolute;
+  z-index:9;
+  top:8%;
+  right:clamp(8px,2vw,28px);
+  padding:9px 13px;
+  color:#185775;
+  font-size:clamp(.72rem,1.3vw,.9rem);
+  font-weight:800;
+  line-height:1.25;
+  text-align:center;
+  border:2px solid rgba(255,255,255,.9);
+  border-radius:14px;
+  background:rgba(255,255,255,.78);
+  box-shadow:0 5px 12px rgba(35,117,139,.18);
+  cursor:pointer;
+}
+.mountain-after-slot.ready{
+  display:none;
+}
+.mountain-after-slot input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.mountain-after-slot:focus-within{outline:3px solid white;outline-offset:4px}
+@media(max-width:600px){.mountain-after-slot{top:4%;right:4px;padding:7px 9px;font-size:.68rem}} 
+
+/* После установки флага красный флаг не показывается: горный пейзаж
+   мягко перетекает во второй кадр без пустого промежутка. */
+.flag{display:none!important}
+.mountain-slot img{
+  transition:opacity .85s cubic-bezier(.22,.7,.25,1),transform .85s cubic-bezier(.22,.7,.25,1),filter .85s ease;
+}
+#mountainPreview{opacity:1;transform:scale(1);filter:none}
+#mountainAfterPreview{opacity:0;transform:scale(1.035);filter:blur(1.5px) saturate(.94)}
+.mountain-slot.is-transitioning #mountainPreview,
+.mountain-slot.changed #mountainPreview{opacity:.18;transform:scale(1.018);filter:blur(1px) brightness(1.06)}
+.mountain-slot.is-transitioning #mountainAfterPreview,
+.mountain-slot.changed #mountainAfterPreview{opacity:1;transform:scale(1);filter:none}
+.mountain-slot.changed #mountainPreview{opacity:0}
+@media(prefers-reduced-motion:reduce){.mountain-slot img{transition:none}}
+
+/* Артефакты появляются слева от горы: единый вертикальный список. */
+.page{padding-bottom:84px}
+.artifacts{
+  position:absolute;
+  z-index:20;
+  top:clamp(170px,18vw,240px); /* Поднято, чтобы четвёртая плашка полностью помещалась в окне. */
+  left:clamp(18px,3vw,54px);
+  width:min(48.3vw,529px); /* +15% к прежней ширине */
+  max-width:none;
+  margin:0;
+}
+.artifact-head{
+  align-items:center;
+  margin-bottom:12px;
+}
+.artifact-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start}.artifact-head h2{margin:0;font-size:clamp(1.15rem,2vw,1.55rem)}.artifact-heading{min-width:0}.counter{align-self:start;margin:0}.artifact-note{margin:3px 0 0;color:#19577a;font-size:clamp(.68rem,1.15vw,.82rem);font-weight:650;line-height:1.2;white-space:nowrap;text-shadow:0 1px 0 rgba(255,255,255,.65)}
+@media(max-width:700px){.artifact-head{grid-template-columns:1fr}.counter{justify-self:start;margin-top:8px}}
+.grid{
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.artifact{
+  grid-template-columns:58px minmax(0,1fr);
+  gap:17px;
+  min-height:82px;
+  padding:12px 16px;
+  border-radius:16px;
+}
+.artifact .icon.medallion{
+  width:54px;
+  height:60px;
+}
+.artifact .title{margin-bottom:0}
+.artifact .text{font-size:.9rem;line-height:1.35}
+.artifact.opened{min-height:96px}
+@media(max-width:700px){
+  .artifacts{
+    position:relative;
+    top:auto;
+    left:auto;
+    width:auto;
+    max-width:930px;
+    margin:30px auto 0;
+    padding:0 18px;
+  }
+  .grid{gap:12px}
+  .artifact{
+    grid-template-columns:62px minmax(0,1fr);
+    gap:16px;
+    min-height:90px;
+    padding:14px 16px;
+  }
+  .artifact .icon.medallion{width:58px;height:64px}
+}
+
+/* Композиция сцены: пейзаж опущен к нижней границе,
+   а действие начинается сразу под вступительной репликой. */
+.scene:after{bottom:0}
+.mountain-slot{bottom:0}
+.hero{padding-bottom:112px}
+.panel{
+  position:absolute;
+  z-index:30;
+  top:clamp(158px,17vw,212px);
+  left:clamp(164px,18vw,260px);
+  width:min(310px,calc(100vw - 182px));
+  margin:0;
+  justify-items:start;
+  text-align:left;
+}
+.panel .status{min-height:0;margin:0 0 2px}
+
+@media(max-width:700px){
+  .hero{padding-bottom:88px}
+  .panel{
+    top:clamp(143px,33vw,185px);
+    left:18px;
+    width:calc(100% - 36px);
+    justify-items:start;
+  }
+  .scene{height:410px}
+  .mountain-slot{bottom:0}
+}
+
+/* Действия идут сразу после вступительного текста и не перекрывают его. */
+.hero{padding-bottom:0}
+.panel{
+  position:relative;
+  top:auto;
+  left:auto;
+  width:min(360px,calc(100% - 36px));
+  margin:18px 0 0 clamp(164px,18vw,260px);
+  justify-items:start;
+  text-align:left;
+}
+.panel .status{margin:0 0 6px}
+@media(max-width:700px){
+  .panel{
+    position:relative;
+    top:auto;
+    left:auto;
+    width:calc(100% - 36px);
+    margin:16px 18px 0;
+  }
+}
+
+/* Пейзаж закреплён у нижнего края экрана: под горой не остаётся пустой зоны. */
+@media(min-width:701px){
+  .page{
+    min-height:100svh;
+    padding-bottom:0;
+  }
+  .scene{
+    position:absolute;
+    right:0;
+    bottom:0;
+    left:0;
+    width:100%;
+    max-width:none;
+    height:min(58vw,590px);
+    margin:0;
+  }
+  .scene:after{
+    bottom:0;
+  }
+  .mountain-slot{
+    bottom:0;
+  }
+}
+
+/* Добавляем воздуха в блоке артефактов: пояснение и карточки не прилипают к заголовку. */
+.artifact-note{
+  margin-top:9px;
+}
+.artifact-head{
+  margin-bottom:20px;
+}
+/* Счётчик встроен в заголовок, без отдельной плашки. */
+.artifact-head{display:block}
+.artifact-head h2{display:flex;align-items:baseline;gap:.38em}
+.artifact-count{font-size:.72em;font-weight:800;white-space:nowrap}
+@media(max-width:700px){
+  .artifact-note{
+    margin-top:7px;
+  }
+  .artifact-head{
+    margin-bottom:16px;
+  }
+}
+
+/* Статус и кнопки выровнены с текстом вступления по одной левой линии. */
+.page{
+  --intro-left:clamp(28px,4vw,56px);
+  --guide-size:clamp(112px,14vw,170px);
+  --guide-gap:clamp(16px,2.8vw,32px);
+}
+.hero{
+  padding-left:var(--intro-left);
+}
+.panel{
+  width:min(360px,calc(100% - var(--intro-left) - var(--guide-size) - var(--guide-gap) - 18px));
+  margin-left:calc(var(--intro-left) + var(--guide-size) + var(--guide-gap));
+  margin-right:0;
+  align-items:start;
+  justify-items:start;
+  text-align:left;
+}
+.panel .status,
+.panel .action{
+  justify-self:start;
+}
+@media(max-width:700px){
+  .page{
+    --intro-left:18px;
+    --guide-size:80px;
+    --guide-gap:12px;
+  }
+  .hero{padding-left:var(--intro-left)}
+  .panel{
+    width:calc(100% - var(--intro-left) - var(--guide-size) - var(--guide-gap) - 18px);
+    margin-left:calc(var(--intro-left) + var(--guide-size) + var(--guide-gap));
+    margin-right:0;
+  }
+}
+
+/* Статус после установки флага не переносится на две строки на широком экране. */
+@media(min-width:701px){
+  /* Левый край блока с гидом совпадает с левым краем блока артефактов. */
+  .page{
+    --intro-left:calc(clamp(18px,3vw,54px) - 18px);
+  }
+  .hero{
+    padding-left:var(--intro-left);
+  }
+  .panel{
+    width:min(540px,calc(100% - var(--intro-left) - var(--guide-size) - var(--guide-gap) - 18px));
+  }
+  .panel .status{
+    white-space:nowrap;
+  }
+}
+
+/* Обе картинки горы смещены влево на 3% вместе с общим контейнером. */
+.mountain-slot{
+  transform:translateX(calc(-50% + 12vw));
+}
+@media(max-width:600px){
+  .mountain-slot{
+    transform:translateX(calc(-50% + 7vw));
+  }
+}
+/* Финальный текст появляется на месте вступления после сбора всех артефактов. */
+.hero .lead.is-complete{
+  max-width:820px;
+  color:#16456f;
+  /* Финальная фраза компактнее основного вступительного текста. */
+  font-size:clamp(1rem,2vw,1.3rem);
+  line-height:1.38;
+  animation:finalTextAppear .55s ease both;
+}
+@keyframes finalTextAppear{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Финальный текст остаётся без отдельной светлой плашки. */
+.hero .lead.is-complete{
+  display:block;
+  margin-top:18px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  text-shadow:0 1px 0 rgba(255,255,255,.72);
+}
+@media(max-width:600px){
+  .hero .lead.is-complete{
+    margin-top:14px;
+    padding:0;
+  }
+}
+
+/* Кнопки действий в зелёном цвете. */
+.action{
+  color:#fff;
+  background:#86C039;
+  border-color:rgba(255,255,255,.9);
+  box-shadow:none;
+  text-shadow:none;
+}
+.action:hover:not(:disabled){
+  background:#98CE50;
+}
+.action:active:not(:disabled){
+  transform:translateY(1px);
+  box-shadow:none;
+}
+.action:disabled{opacity:.68;cursor:default}
+
+/* Основной текст интерфейса — тёмно-серый; цветными остаются только заголовки артефактов. */
+body,
+.hero,
+.hero h1,
+.hero .lead,
+.status,
+.artifact-head,
+.artifact-note,
+.text,
+.final,
+.restart,
+.guide-slot::before{
+  color:#404040;
+  text-shadow:none;
+}
+/* На зелёных кнопках сохраняем контрастный белый текст. */
+.action{
+  color:#fff;
+  text-shadow:none;
+}
+/* Финальный текст об антихрупкости также использует основной тёмно-серый цвет. */
+.hero .lead.is-complete{
+  color:#404040;
+}
+/* Вторая строка финального сообщения всегда остаётся цельной. */
+.hero .lead.is-complete .final-line{
+  display:inline-block;
+  white-space:nowrap;
+  font-size:clamp(.82rem,1.35vw,1rem);
+}
+.artifact .title{
+  color:#164c70;
+}
+/* Белая обводка у заголовка и встроенного счётчика артефактов. */
+.artifact-head h2,
+.artifact-head .artifact-count{
+  -webkit-text-stroke:1px rgba(255,255,255,.92);
+  paint-order:stroke fill;
+  text-shadow:0 1px 0 rgba(255,255,255,.9);
+}
+/* Текст внутри плашек артефактов — 16 px. */
+.artifact .title,
+.artifact .text{
+  font-size:16px;
+}
+
+/* Третья и четвёртая плашки имеют одинаковую высоту. */
+.grid .artifact:nth-child(3),
+.grid .artifact:nth-child(4){
+  min-height:116px;
+}
+@media(max-width:700px){
+  .grid .artifact:nth-child(3),
+  .grid .artifact:nth-child(4){
+    min-height:128px;
+  }
+}
+
+/* Солнце и его лучи уменьшены ещё на 10%. */
+.sun{
+  width:clamp(76.14px,8.91vw,118.26px);
+}
+.sun:before{
+  width:clamp(145.8px,18.63vw,251.1px);
+}
+
+/* Финальное сообщение: обе строки одного кегля; солнце сдвинуто влево на 1 см. */
+.hero .lead.is-complete .final-line{
+  font-size:inherit;
+  line-height:inherit;
+}
+@media(min-width:701px){
+  .sun{right:calc(3% + 1cm);}
+}
+</style>
+</head>
+<body>
+<canvas id="fireworks" aria-hidden="true"></canvas>
+<main class="page"><div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div>
+<header class="hero"><div class="guide-slot has-image"><img id="guidePreview" src="./гид.png" alt="Гид"></div><div class="hero-copy"><p class="eyebrow">Экспедиция команды</p><h1><span class="title-line">Ты проделал огромную работу</span><span class="title-line">и достиг самой вершины!</span></h1><p class="lead" id="introLead">Установи флаг, забери результаты своего пути<br>и открой все артефакты команды.</p></div></header>
+<section class="scene" aria-label="Горный пейзаж"><div class="mountain-slot has-image"><img id="mountainPreview" src="./гора до установки флага.png" alt="Гора до установки флага"><img id="mountainAfterPreview" src="./гора после установки флага.png" alt="Гора после установки флага" aria-hidden="true"></div></section>
+<section class="panel" aria-live="polite"><p class="status" id="status">Вершина ждёт свой флаг.</p><button class="action" id="plant">Установить флаг</button><button class="action hidden" id="collect">Забрать добытые артефакты</button></section>
+<section class="artifacts hidden" id="artifacts"><div class="artifact-head"><div class="artifact-heading"><h2>Добытые артефакты <span class="artifact-count" id="counter">0/4</span></h2><p class="artifact-note">Открой каждый артефакт, чтобы собрать результаты экспедиции</p></div></div><div class="grid">
+<button class="artifact" data-id="1"><span class="icon medallion" aria-hidden="true"><i class="mountains"></i></span><span><span class="title">Артефакт 1</span><span class="text"></span></span></button>
+<button class="artifact" data-id="2"><span class="icon medallion" aria-hidden="true"><i class="mountains"></i></span><span><span class="title">Артефакт 2</span><span class="text"></span></span></button>
+<button class="artifact" data-id="3"><span class="icon medallion" aria-hidden="true"><i class="mountains"></i></span><span><span class="title">Артефакт 3</span><span class="text"></span></span></button>
+<button class="artifact" data-id="4"><span class="icon medallion" aria-hidden="true"><i class="mountains"></i></span><span><span class="title">Артефакт 4</span><span class="text"></span></span></button>
+</div></section>
+</main>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const guidePreview=$('#guidePreview');
+const mountainPreview=$('#mountainPreview');
+const mountainAfterPreview=$('#mountainAfterPreview');
+const mountainSlot=$('.mountain-slot');
+const mountainAfterSource=mountainAfterPreview.getAttribute('src');
+const texts={1:'<strong>У тебя есть «Карта гипотез»:</strong><br>ты знаешь, что и зачем проверяешь.',2:'<strong>У тебя есть «Карта процесса-опыта»:</strong><br>ты знаешь, где проверяешь это в реальности.',3:'<strong>У тебя есть «Story Map»:</strong><br>ты знаешь, как проводить проверку<br>небольшими шагами.',4:'<strong>У тебя есть «Каденция стратегических решений»:</strong><br>ты знаешь, как часто и по каким правилам пересматривать решения.'};let opened=0,timer,frame,particles=[];
+$('#plant').onclick=()=>{
+  const button=$('#plant');
+  button.disabled=true;
+  if(mountainAfterSource){
+    /* Второй кадр уже подготовлен отдельным слоем: оба изображения
+       ненадолго остаются видимыми, поэтому не возникает «мигания». */
+    mountainSlot.classList.remove('changed');
+    void mountainAfterPreview.offsetWidth;
+    requestAnimationFrame(()=>{
+      mountainSlot.classList.add('is-transitioning');
+      requestAnimationFrame(()=>mountainSlot.classList.add('changed'));
+    });
+    setTimeout(()=>{
+      mountainSlot.classList.remove('is-transitioning');
+      $('#status').textContent='Вершина отмечена. Время забрать артефакты.';
+    },900);
+  }
+  setTimeout(()=>{
+    button.classList.add('hidden');
+    $('#collect').classList.remove('hidden');
+    $('#collect').classList.add('fade');
+  },mountainAfterSource?1000:500);
+};
+$('#collect').onclick=()=>{$('#collect').classList.add('hidden');$('#introLead').classList.add('hidden');$('#artifacts').classList.remove('hidden');$('#artifacts').classList.add('fade');$('#status').textContent='';$$('.artifact')[0].focus()};
+$$('.artifact').forEach(b=>b.onclick=()=>{if(b.classList.contains('opened'))return;b.classList.add('opened');b.querySelector('.text').innerHTML=texts[b.dataset.id];opened++;$('#counter').textContent=`${opened}/4`;if(opened===4){const introLead=$('#introLead');introLead.innerHTML='Антихрупкость — это когда вы покорили вершину, стали ещё устойчивее<br><span class="final-line">и сильнее и готовы покорять новые вершины с неопределённым маршрутом.</span>';introLead.classList.add('is-complete');setTimeout(fireworks,400)}});
+const c=$('#fireworks'),x=c.getContext('2d');function resize(){c.width=innerWidth;c.height=innerHeight}addEventListener('resize',resize);function burst(){let cx=innerWidth*(.2+Math.random()*.6),cy=innerHeight*(.1+Math.random()*.3),color=['#ffd166','#ef476f','#06d6a0','#64d9ff','#fff'][Math.floor(Math.random()*5)];for(let i=0;i<48;i++){let a=Math.PI*2*i/48,v=2+Math.random()*4;particles.push({x:cx,y:cy,vx:Math.cos(a)*v,vy:Math.sin(a)*v,l:85,s:1+Math.random()*2,color})}}function draw(){x.clearRect(0,0,c.width,c.height);particles=particles.filter(p=>p.l>0);particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.045;p.l--;x.globalAlpha=p.l/90;x.fillStyle=p.color;x.beginPath();x.arc(p.x,p.y,p.s,0,7);x.fill()});x.globalAlpha=1;frame=requestAnimationFrame(draw)}function fireworks(){resize();burst();timer=setInterval(burst,850);draw()}function stop(){clearInterval(timer);cancelAnimationFrame(frame);particles=[];x.clearRect(0,0,c.width,c.height)}
+</script></body></html>
